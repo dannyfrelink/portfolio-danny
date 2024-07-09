@@ -1,3 +1,4 @@
+import Button from "@/components/Button";
 import Header from "@/components/Header";
 import Skill from "@/components/Skill";
 import BaseText from "@/components/typography/BaseText";
@@ -53,11 +54,13 @@ export default function Home() {
       <Header />
 
       <main className="[&>*]:mt-11 max-w-[528px] mx-auto xl:max-w-none xl:w-[85%]">
+        {/* About section */}
         <section
           className="xl:flex xl:justify-between xl:items-center xl:max-w-[1200px] xl:mx-auto xl:!mt-14"
           id="about"
         >
           <div className="xl:w-[48.5%] xl:max-w-[500px]">
+            {/* Info card */}
             <article className="w-full max-w-[400px] mx-auto bg-backgroundSec py-8 sm:max-w-none sm:py-9 sm:rounded">
               <div className="flex items-center justify-between w-[85%] mx-auto">
                 <div className="h-[110px] w-[94px] bg-secondary rounded-[40px] sm:h-[172px] sm:w-[147px] sm:rounded-[50px]"></div>
@@ -70,13 +73,15 @@ export default function Home() {
                     ,
                   </h1>
                   <p>Front-end Developer</p>
-                  <button className="border-2 border-secondary rounded text-secondary mt-3 py-1.5 px-3 sm:mt-5">
-                    Portfolio
+                  <button>
+                    <Button>Portfolio</Button>
                   </button>
                 </div>
               </div>
             </article>
-            <article className="w-[85%] mt-6 mx-auto [&>p]:mt-3 [&>p:first-of-type]:mt-4 sm:w-full sm:mt-8 sm:[&>p:first-of-type]:mt-5 sm:[&>p]:mt-3.5">
+
+            {/* About text */}
+            <article className="w-[85%] mt-6 mx-auto [&>p]:mt-3 [&>p:first-of-type]:mt-4 sm:w-full sm:mt-8 sm:[&>p:first-of-type]:mt-5 sm:[&>p]:mt-3.5 xl:mt-10">
               <H2>About</H2>
               <BaseText>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -92,6 +97,8 @@ export default function Home() {
               </BaseText>
             </article>
           </div>
+
+          {/* Skills */}
           <article className="xl:w-[46.5%] xl:max-w-[600px]">
             <h3 className="text-xl text-center mt-7 mb-[18px] sm:text-[28px] sm:mb-[22px] xl:mt-0">
               Skills
@@ -105,7 +112,10 @@ export default function Home() {
           </article>
         </section>
 
-        <section id="portfolio"></section>
+        {/* Portfolio section */}
+        <section id="portfolio">
+          <H2>Portfolio</H2>
+        </section>
       </main>
 
       <footer id="contact"></footer>
