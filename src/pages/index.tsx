@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Skill from "@/components/Skill";
 import BaseText from "@/components/typography/BaseText";
 import H2 from "@/components/typography/H2";
 import Image from "next/image";
@@ -97,21 +98,9 @@ export default function Home() {
             </h3>
 
             <div className="flex flex-wrap justify-between gap-y-5 w-[85%] max-w-[350px] m-auto sm:gap-y-7 sm:w-full sm:max-w-none [&>*:last-child]:sm:mx-auto">
-              {skills.map((skill) => {
-                let icon = require(`../assets/skills-icons/${skill.icon}`);
-                return (
-                  <div className="flex flex-col items-center bg-backgroundSec rounded-[30px] w-[45%] max-w-[158px] py-5 sm:w-[30%] sm:rounded-[40px] sm:max-w-none sm:py-7">
-                    <Image
-                      src={icon}
-                      alt={skill.name}
-                      width={100}
-                      height={100}
-                      className="h-10 w-auto mb-2 sm:h-11"
-                    />
-                    <p className="sm:text-lg">{skill.name}</p>
-                  </div>
-                );
-              })}
+              {skills.map((skill) => (
+                <Skill key={skill.name} skill={skill} />
+              ))}
             </div>
           </article>
         </section>
