@@ -15,6 +15,10 @@ const config: Config = {
         backgroundSec: "#3D4751",
       },
     },
+    screens: {
+      sm: "640px",
+      xl: "1100px",
+    },
   },
   plugins: [],
 };
