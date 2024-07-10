@@ -4,7 +4,7 @@ import Project from "@/components/Project";
 import Skill from "@/components/Skill";
 import BaseText from "@/components/typography/BaseText";
 import H2 from "@/components/typography/H2";
-import { projects, skills } from "@/content/variables";
+import { contactInfo, projects, skills } from "@/content/variables";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -118,19 +118,47 @@ export default function Home() {
                 height={500}
               />
             </div>
-            {/* 
-            <Image
-              className="hidden h-full object-cover object-center xl:block"
-              src={activeProjectImage}
-              alt={`Project ${activeProject && activeProject.name}`}
-              width={500}
-              height={500}
-            /> */}
           </div>
         </section>
       </main>
 
-      <footer id="contact"></footer>
+      <footer
+        className="w-full bg-backgroundSec pt-[26px] pb-9 sm:pt-9 sm:pb-11"
+        id="contact"
+      >
+        <section className="w-[85%] mx-auto max-w-[1200px]">
+          <H2>Contact</H2>
+
+          <div className="[&>*:first-child]:mt-8 [&>*:not(:first-child)]:mt-6 sm:flex sm:flex-wrap sm:max-w-[750px] sm:[&>*]:w-1/2 sm:[&>*]:!mt-9">
+            {contactInfo.map((contact) => {
+              const icon = require(`../assets/contact-icons/${contact.icon}`);
+              return (
+                <article className="flex items-center gap-3 sm:gap-5">
+                  <Image
+                    className="h-4 w-auto sm:h-5"
+                    src={icon}
+                    alt={`Info ${contact.icon.split(".")[0]}`}
+                    width={100}
+                    height={100}
+                  />
+
+                  {contact.href ? (
+                    <a
+                      className="block border-b-[0.5px] border-textColor sm:text-lg sm:border-b-[0.75px]"
+                      href={contact.href}
+                      target="_blank"
+                    >
+                      {contact.content}
+                    </a>
+                  ) : (
+                    <BaseText>{contact.content}</BaseText>
+                  )}
+                </article>
+              );
+            })}
+          </div>
+        </section>
+      </footer>
     </>
   );
 }

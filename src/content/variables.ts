@@ -71,3 +71,25 @@ export const projects = [
     image: "reisfeeld.png",
   },
 ];
+
+export const contactInfo = [
+  {
+    content: "+316 29253207",
+    href: "/",
+    icon: "whatsapp.png",
+  },
+  {
+    content: "danny-frelink@hotmail.com",
+    href: "/",
+    icon: "mail.png",
+  },
+  {
+    content: "Danny Frelink",
+    href: "/",
+    icon: "linkedin.png",
+  },
+  {
+    content: "Krommenie, Netherlands",
+    icon: "location.png",
+  },
+];
