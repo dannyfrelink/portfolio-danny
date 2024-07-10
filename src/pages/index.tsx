@@ -9,7 +9,12 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Home() {
-  const [openProject, setOpenProject] = useState("reisfeeld");
+  const [openProject, setOpenProject] = useState("Reisfeeld");
+  const activeProject = projects.find(
+    (project) => project.name === openProject
+  );
+  const activeProjectImage =
+    activeProject && require(`../assets/projects/${activeProject.image}`);
 
   const handleProjectClick = (e: any) => {
     let target = e.target;
@@ -19,21 +24,17 @@ export default function Home() {
       target = target.closest("article");
     }
 
-    if (openProject === target.id) {
-      setOpenProject("");
-    } else {
-      setOpenProject(target.id);
-    }
+    setOpenProject(target.id);
   };
 
   return (
     <>
       <Header />
 
-      <main className="[&>*]:mt-11 max-w-[528px] mx-auto xl:max-w-none xl:w-[85%]">
+      <main className="max-w-[528px] mx-auto xl:max-w-none xl:w-[85%]">
         {/* About section */}
         <section
-          className="xl:flex xl:justify-between xl:items-center xl:max-w-[1200px] xl:mx-auto xl:!mt-14"
+          className="mt-11 xl:flex xl:justify-between xl:items-center xl:max-w-[1200px] xl:mx-auto xl:mt-14"
           id="about"
         >
           <div className="xl:w-[48.5%] xl:max-w-[500px]">
@@ -90,18 +91,42 @@ export default function Home() {
         </section>
 
         {/* Portfolio section */}
-        <section className="w-[85%] mx-auto sm:w-full" id="portfolio">
+        <section
+          className="w-[85%] mx-auto my-11 sm:w-full sm:my-20 xl:max-w-[1200px]"
+          id="portfolio"
+        >
           <H2>Portfolio</H2>
 
-          <section className="mt-5 [&>*]:border-t-[0.5px] [&>*:last-child]:border-b-[0.5px] [&>*]:border-textColor sm:[&>*]:border-t-[0.75px] sm:[&>*:last-child]:border-b-[0.75px]">
-            {projects.map((project) => (
-              <Project
-                project={project}
-                openProject={openProject}
-                onClick={handleProjectClick}
+          <div className="mt-5 xl:flex xl:mt-9">
+            <section className="[&>*]:border-t-[0.5px] [&>*:last-child]:border-b-[0.5px] [&>*]:border-textColor sm:[&>*]:border-t-[0.75px] sm:[&>*:last-child]:border-b-[0.75px] xl:w-1/2 xl:max-w-[550px]">
+              {projects.map((project) => (
+                <Project
+                  key={project.name}
+                  project={project}
+                  openProject={openProject}
+                  onClick={handleProjectClick}
+                />
+              ))}
+            </section>
+
+            <div className="relative flex-grow xl:block">
+              <Image
+                className="absolute inset-0 h-full w-full object-cover object-center"
+                src={activeProjectImage}
+                alt={`Project ${activeProject && activeProject.name}`}
+                width={500}
+                height={500}
               />
-            ))}
-          </section>
+            </div>
+            {/* 
+            <Image
+              className="hidden h-full object-cover object-center xl:block"
+              src={activeProjectImage}
+              alt={`Project ${activeProject && activeProject.name}`}
+              width={500}
+              height={500}
+            /> */}
+          </div>
         </section>
       </main>
 

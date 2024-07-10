@@ -16,7 +16,7 @@ interface ProjectProps {
 
 const Project: React.FC<ProjectProps> = ({ project, openProject, onClick }) => {
   const image = require(`../assets/projects/${project.image}`);
-  const projectId = project.name.toLowerCase().replace(" ", "-");
+  const projectId = project.name;
 
   return (
     <article
@@ -26,7 +26,7 @@ const Project: React.FC<ProjectProps> = ({ project, openProject, onClick }) => {
     >
       <div
         className={`px-2.5 ${
-          projectId === openProject && "mb-5 sm:mb-7"
+          projectId === openProject && "mb-5 sm:mb-7 xl:mb-0"
         } sm:px-6`}
       >
         <h4
@@ -34,15 +34,18 @@ const Project: React.FC<ProjectProps> = ({ project, openProject, onClick }) => {
             projectId === openProject && "mb-3"
           } sm:text-xl`}
         >
-          {project.name} <span>{projectId === openProject ? "-" : "+"}</span>
+          {project.name}{" "}
+          <span className={projectId === openProject ? "hidden" : ""}>+</span>
         </h4>
 
         {projectId === openProject && (
           <>
             <BaseText>{project.description}</BaseText>
 
-            <a href={project.href} target="_blank">
-              <Button>Read More</Button>
+            <a className="block w-fit" href={project.href} target="_blank">
+              <Button>
+                {project.href.includes("github") ? "See Code" : "See Website"}
+              </Button>
             </a>
           </>
         )}
@@ -50,7 +53,7 @@ const Project: React.FC<ProjectProps> = ({ project, openProject, onClick }) => {
 
       {projectId === openProject && (
         <Image
-          className="mb-1.5 sm:w-full sm:px-6"
+          className="mb-1.5 sm:w-full sm:px-6 xl:hidden"
           src={image}
           alt={`Project ${project.name}`}
           width={500}
