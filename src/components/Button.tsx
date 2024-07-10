@@ -6,7 +6,7 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ children }) => {
   return (
-    <div className="w-fit border-2 border-secondary rounded text-secondary mt-3 py-1.5 px-3 sm:mt-5 sm:text-lg">
+    <div className="w-fit border-2 border-secondary rounded text-secondary py-1.5 px-3 sm:text-lg">
       {children}
     </div>
   );

@@ -25,7 +25,7 @@ const Contact: React.FC<ContactProps> = ({ contact }) => {
 
       {contact.href ? (
         <a
-          className="block border-b-[0.5px] border-textColor sm:text-lg sm:border-b-[0.75px]"
+          className="block border-b-[0.5px] border-textColor sm:text-lg sm:border-b-[0.75px] hover:text-secondary hover:border-secondary focus:text-secondary focus:border-secondary"
           href={contact.href}
           target="_blank"
         >

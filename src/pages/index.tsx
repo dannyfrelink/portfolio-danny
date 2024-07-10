@@ -28,6 +28,13 @@ export default function Home() {
     setOpenProject(target.id);
   };
 
+  const handleProjectKeyDown = (e: any) => {
+    if (e.key === "Enter") {
+      let target = e.target;
+      setOpenProject(target.id);
+    }
+  };
+
   return (
     <>
       <Header />
@@ -52,7 +59,7 @@ export default function Home() {
                     ,
                   </h1>
                   <p>Front-end Developer</p>
-                  <button>
+                  <button className="mt-3 sm:mt-5 hover:bg-[rgba(42,_52,_61,_0.4)] focus:bg-[rgba(42,_52,_61,_0.4)]">
                     <Button>Portfolio</Button>
                   </button>
                 </div>
@@ -106,6 +113,7 @@ export default function Home() {
                   project={project}
                   openProject={openProject}
                   onClick={handleProjectClick}
+                  onKeyDown={handleProjectKeyDown}
                 />
               ))}
             </section>

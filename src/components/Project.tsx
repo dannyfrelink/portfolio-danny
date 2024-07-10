@@ -12,9 +12,15 @@ interface ProjectProps {
   };
   openProject: string;
   onClick: (e: any) => void;
+  onKeyDown: (e: any) => void;
 }
 
-const Project: React.FC<ProjectProps> = ({ project, openProject, onClick }) => {
+const Project: React.FC<ProjectProps> = ({
+  project,
+  openProject,
+  onClick,
+  onKeyDown,
+}) => {
   const image = require(`../assets/projects/${project.image}`);
   const projectId = project.name;
 
@@ -22,7 +28,12 @@ const Project: React.FC<ProjectProps> = ({ project, openProject, onClick }) => {
     <article
       id={projectId}
       onClick={onClick}
-      className="py-3 sm:py-[18px] sm:[&_p]:w-[80%]"
+      onKeyDown={onKeyDown}
+      className={`py-3 sm:py-[18px] sm:[&_p]:w-[80%] ${
+        projectId !== openProject &&
+        "cursor-pointer hover:bg-[rgba(61,_71,_81,_0.4)] focus:bg-[rgba(61,_71,_81,_0.4)]"
+      }`}
+      tabIndex={projectId !== openProject ? 0 : undefined}
     >
       <div
         className={`px-2.5 ${
@@ -42,7 +53,11 @@ const Project: React.FC<ProjectProps> = ({ project, openProject, onClick }) => {
           <>
             <BaseText>{project.description}</BaseText>
 
-            <a className="block w-fit" href={project.href} target="_blank">
+            <a
+              className="block w-fit mt-3 sm:mt-5 hover:bg-[rgba(61,_71,_81,_0.4)] focus:bg-[rgba(61,_71,_81,_0.4)]"
+              href={project.href}
+              target="_blank"
+            >
               <Button>
                 {project.href.includes("github") ? "See Code" : "See Website"}
               </Button>
