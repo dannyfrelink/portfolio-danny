@@ -16,6 +16,7 @@ export default function Home() {
   );
   const activeProjectImage =
     activeProject && require(`../assets/projects/${activeProject.image}`);
+  const profileImg = require("../assets/profile.png");
 
   const handleProjectClick = (e: any) => {
     let target = e.target;
@@ -49,7 +50,14 @@ export default function Home() {
             {/* Info card */}
             <article className="w-full max-w-[400px] mx-auto bg-backgroundSec py-8 sm:max-w-none sm:py-9 sm:rounded">
               <div className="flex items-center justify-between w-[85%] mx-auto">
-                <div className="h-[110px] w-[94px] bg-secondary rounded-[40px] sm:h-[172px] sm:w-[147px] sm:rounded-[50px]"></div>
+                <Image
+                  className="h-[110px] w-[94px] bg-secondary rounded-[37.5px] object-cover object-center sm:h-[172px] sm:w-[147px] sm:rounded-[50px]"
+                  src={profileImg}
+                  alt="Me (Danny Frelink)"
+                  width={500}
+                  height={500}
+                />
+
                 <div className="sm:text-lg">
                   <h1 className="mb-0.5">
                     I'm{" "}
