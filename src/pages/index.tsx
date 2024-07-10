@@ -42,7 +42,7 @@ export default function Home() {
       <main className="max-w-[528px] mx-auto xl:max-w-none xl:w-[85%]">
         {/* About section */}
         <section
-          className="mt-11 xl:flex xl:justify-between xl:items-center xl:max-w-[1200px] xl:mx-auto xl:mt-14"
+          className="mt-28 sm:mt-[7.5rem] xl:flex xl:justify-between xl:items-center xl:max-w-[1200px] xl:mx-auto xl:mt-32"
           id="about"
         >
           <div className="xl:w-[48.5%] xl:max-w-[500px]">
@@ -86,7 +86,7 @@ export default function Home() {
 
           {/* Skills */}
           <article className="xl:w-[46.5%] xl:max-w-[600px]">
-            <h3 className="text-xl text-center mt-7 mb-[18px] sm:text-[28px] sm:mb-[22px] xl:mt-0">
+            <h3 className="text-xl text-center mt-7 mb-[18px] sm:text-2xl sm:mb-[22px] xl:mt-0">
               Skills
             </h3>
 
@@ -118,7 +118,7 @@ export default function Home() {
               ))}
             </section>
 
-            <div className="relative flex-grow xl:block">
+            <div className="relative flex-grow xl:block -z-10">
               <Image
                 className="absolute inset-0 h-full w-full object-cover object-center"
                 src={activeProjectImage}
