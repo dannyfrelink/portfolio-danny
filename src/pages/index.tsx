@@ -7,6 +7,7 @@ import BaseText from "@/components/typography/BaseText";
 import H2 from "@/components/typography/H2";
 import { contactInfo, projects, skills } from "@/content/variables";
 import Image from "next/image";
+import { Link } from "react-scroll";
 import { useState } from "react";
 
 export default function Home() {
@@ -67,9 +68,17 @@ export default function Home() {
                     ,
                   </h1>
                   <p>Front-end Developer</p>
-                  <button className="mt-3 sm:mt-5 hover:bg-[rgba(42,_52,_61,_0.4)] focus:bg-[rgba(42,_52,_61,_0.4)]">
+
+                  <Link
+                    className="cursor-pointer block w-fit mt-3 sm:mt-5 hover:bg-[rgba(42,_52,_61,_0.4)] focus:bg-[rgba(42,_52,_61,_0.4)]"
+                    to="portfolio"
+                    smooth={true}
+                    offset={-100}
+                    duration={500}
+                    tabIndex={0}
+                  >
                     <Button>Portfolio</Button>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </article>
