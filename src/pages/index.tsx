@@ -12,6 +12,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [openProject, setOpenProject] = useState("Reisfeeld");
+  const [oldOpenProject, setOldOpenProject] = useState("");
   const activeProject = projects.find(
     (project) => project.name === openProject
   );
@@ -27,13 +28,20 @@ export default function Home() {
       target = target.closest("article");
     }
 
-    setOpenProject(target.id);
+    if (openProject !== target.id) {
+      setOldOpenProject(openProject);
+      setOpenProject(target.id);
+    }
   };
 
   const handleProjectKeyDown = (e: any) => {
     if (e.key === "Enter") {
       let target = e.target;
-      setOpenProject(target.id);
+
+      if (openProject !== target.id) {
+        setOldOpenProject(openProject);
+        setOpenProject(target.id);
+      }
     }
   };
 
@@ -129,6 +137,7 @@ export default function Home() {
                   key={project.name}
                   project={project}
                   openProject={openProject}
+                  oldOpenProject={oldOpenProject}
                   onClick={handleProjectClick}
                   onKeyDown={handleProjectKeyDown}
                 />
@@ -148,6 +157,7 @@ export default function Home() {
         </section>
       </main>
 
+      {/* Contact section */}
       <footer
         className="w-full bg-backgroundSec pt-[26px] pb-9 sm:pt-9 sm:pb-11"
         id="contact"

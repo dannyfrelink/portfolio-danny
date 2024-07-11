@@ -7,3 +7,22 @@ body {
   background: #2a343d;
   font-family: "Tenor Sans", Helvetica, sans-serif;
 }
+
+.project {
+  overflow-y: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+article.project-open {
+  max-height: var(--content-height);
+}
+
+article.project-closed {
+  max-height: 53px;
+}
+
+@media (min-width: 640px) {
+  article.project-closed {
+    max-height: 65px;
+  }
+}

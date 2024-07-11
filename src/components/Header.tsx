@@ -15,6 +15,7 @@ const Header: React.FC<HeaderProps> = () => {
         <nav className="flex gap-4 sm:gap-6 xl:gap-8">
           {navItems.map((item) => (
             <Link
+              key={item}
               className="cursor-pointer hover:text-secondary focus:text-secondary"
               to={item.toLowerCase()}
               smooth={true}
