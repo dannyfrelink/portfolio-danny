@@ -75,17 +75,17 @@ export const projects = [
 export const contactInfo = [
   {
     content: "+316 29253207",
-    href: "/",
+    href: "https://wa.me/+31629253207",
     icon: "whatsapp.png",
   },
   {
     content: "danny-frelink@hotmail.com",
-    href: "/",
+    href: "mailto:danny-frelink@hotmail.com",
     icon: "mail.png",
   },
   {
     content: "Danny Frelink",
-    href: "/",
+    href: "https://nl.linkedin.com/in/danny-frelink-751877150",
     icon: "linkedin.png",
   },
   {
