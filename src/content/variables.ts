@@ -45,28 +45,28 @@ export const projects = [
   {
     name: "Reisfeeld",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "My girlfriend and my own travel blog. Sharing our tips and tricks of our time spent travelling. Fully designed and coded with NextJS, Typescript and TailwindCSS.",
     href: "https://reisfeeld.nl/",
     image: "reisfeeld.png",
   },
   {
     name: "ContentFlow Media",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Responsive portfolio website for Rani van Delden, a Social Media Manager. The website is fully designed and coded based on Rani's preferences.",
     href: "https://contentflowmedia.nl/",
     image: "reisfeeld.png",
   },
   {
     name: "Photography portfolio",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "A photographers portfolio, mostly based around wedding photography, for Gina ten Hoope Photography by Gina ten Hoope. Built with NodeJS, Express and EJS.",
     href: "https://www.ginatenhoope.com/",
     image: "reisfeeld.png",
   },
   {
     name: "Tripper",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "An application that helps people create a personalized travel itinerary for Bali, with the use of the ChatGPT API, by giving their own preferred activities.",
     href: "https://github.com/dannyfrelink/tripper",
     image: "reisfeeld.png",
   },
