@@ -149,8 +149,8 @@ export default function Home() {
                 className="absolute inset-0 h-full w-full object-cover object-center"
                 src={activeProjectImage}
                 alt={`Project ${activeProject && activeProject.name}`}
-                width={500}
-                height={500}
+                width={5000}
+                height={5000}
               />
             </div>
           </div>

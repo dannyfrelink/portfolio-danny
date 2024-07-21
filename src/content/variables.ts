@@ -54,7 +54,7 @@ export const projects = [
     description:
       "Responsive portfolio website for Rani van Delden, a Social Media Manager. The website is fully designed and coded based on Rani's preferences.",
     href: "https://contentflowmedia.nl/",
-    image: "reisfeeld.png",
+    image: "tripper.png",
   },
   {
     name: "Photography portfolio",
@@ -68,7 +68,7 @@ export const projects = [
     description:
       "An application that helps people create a personalized travel itinerary for Bali, with the use of the ChatGPT API, by giving their own preferred activities.",
     href: "https://github.com/dannyfrelink/tripper",
-    image: "reisfeeld.png",
+    image: "tripper.png",
   },
 ];
 

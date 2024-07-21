@@ -84,13 +84,15 @@ const Project: React.FC<ProjectProps> = ({
       </div>
 
       {ifStatement && (
-        <Image
-          className="mb-1.5 sm:w-full sm:px-6 xl:hidden"
-          src={image}
-          alt={`Project ${project.name}`}
-          width={500}
-          height={500}
-        />
+        <div className="mb-1.5 sm:px-6 xl:hidden">
+          <Image
+            className="rounded"
+            src={image}
+            alt={`Project ${project.name}`}
+            width={5000}
+            height={5000}
+          />
+        </div>
       )}
     </article>
   );
