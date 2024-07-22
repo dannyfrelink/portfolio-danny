@@ -23,18 +23,17 @@ const Project: React.FC<ProjectProps> = ({
   onClick,
   onKeyDown,
 }) => {
-  const image = require(`../assets/projects/${project.image}`);
   const projectId = project.name;
   const contentRef = useRef<HTMLDivElement>(null);
-  const [contentHeight, setContentHeight] = useState("");
+  const [contentHeight, setContentHeight] = useState<string | null>(null);
+  const ifStatement = projectId === openProject || projectId === oldOpenProject;
+  const image = ifStatement && require(`../assets/projects/${project.image}`);
 
   useEffect(() => {
     if (contentRef.current) {
       setContentHeight(`${contentRef.current.scrollHeight}px`);
     }
   }, [openProject]);
-
-  const ifStatement = projectId === openProject || projectId === oldOpenProject;
 
   return (
     <article
@@ -49,9 +48,11 @@ const Project: React.FC<ProjectProps> = ({
       } ${projectId === oldOpenProject && "project-closed"}`}
       tabIndex={projectId !== openProject ? 0 : undefined}
       style={
-        {
-          "--content-height": ifStatement && contentHeight,
-        } as React.CSSProperties
+        ifStatement
+          ? ({
+              "--content-height": contentHeight,
+            } as React.CSSProperties)
+          : undefined
       }
     >
       <div
@@ -83,7 +84,7 @@ const Project: React.FC<ProjectProps> = ({
         )}
       </div>
 
-      {ifStatement && (
+      {image && (
         <div className="mb-1.5 sm:px-6 xl:hidden">
           <Image
             className="rounded"
