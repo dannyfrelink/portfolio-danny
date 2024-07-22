@@ -54,14 +54,14 @@ export const projects = [
     description:
       "Responsive portfolio website for Rani van Delden, a Social Media Manager. The website is fully designed and coded based on Rani's preferences.",
     href: "https://contentflowmedia.nl/",
-    image: "tripper.png",
+    image: "contentflow-media.png",
   },
   {
     name: "Photography portfolio",
     description:
       "A photographers portfolio, mostly based around wedding photography, for Gina ten Hoope Photography by Gina ten Hoope. Built with NodeJS, Express and EJS.",
     href: "https://www.ginatenhoope.com/",
-    image: "reisfeeld.png",
+    image: "ginatenhoope-photography.png",
   },
   {
     name: "Tripper",
