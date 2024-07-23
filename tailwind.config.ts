@@ -17,7 +17,8 @@ const config: Config = {
     },
     screens: {
       sm: "640px",
-      xl: "1100px",
+      lg: "1100px",
+      xl: "1300px",
     },
   },
   plugins: [],

@@ -49,13 +49,13 @@ export default function Home() {
     <>
       <Header />
 
-      <main className="max-w-[528px] mx-auto xl:max-w-none xl:w-[85%]">
+      <main className="max-w-[528px] mx-auto lg:max-w-none lg:w-[85%]">
         {/* About section */}
         <section
-          className="mt-28 sm:mt-[7.5rem] xl:flex xl:justify-between xl:items-center xl:max-w-[1200px] xl:mx-auto xl:mt-32"
+          className="mt-28 sm:mt-[7.5rem] lg:flex lg:justify-between lg:items-center lg:max-w-[1200px] lg:mx-auto lg:mt-32"
           id="about"
         >
-          <div className="xl:w-[48.5%] xl:max-w-[500px]">
+          <div className="lg:w-[48.5%] lg:max-w-[500px]">
             {/* Info card */}
             <article className="w-full max-w-[400px] mx-auto bg-backgroundSec py-8 sm:max-w-none sm:py-9 sm:rounded">
               <div className="flex items-center justify-between w-[85%] mx-auto">
@@ -92,7 +92,7 @@ export default function Home() {
             </article>
 
             {/* About text */}
-            <article className="w-[85%] mt-6 mx-auto [&>p]:mt-3 [&>p:first-of-type]:mt-4 sm:w-full sm:mt-8 sm:[&>p:first-of-type]:mt-5 sm:[&>p]:mt-3.5 xl:mt-10">
+            <article className="w-[85%] mt-6 mx-auto [&>p]:mt-3 [&>p:first-of-type]:mt-4 sm:w-full sm:mt-8 sm:[&>p:first-of-type]:mt-5 sm:[&>p]:mt-3.5 lg:mt-10">
               <H2>About</H2>
               <BaseText>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -110,8 +110,8 @@ export default function Home() {
           </div>
 
           {/* Skills */}
-          <article className="xl:w-[46.5%] xl:max-w-[600px]">
-            <h3 className="text-xl text-center mt-7 mb-[18px] sm:text-2xl sm:mb-[22px] xl:mt-0">
+          <article className="lg:w-[46.5%] lg:max-w-[600px]">
+            <h3 className="text-xl text-center mt-7 mb-[18px] sm:text-2xl sm:mb-[22px] lg:mt-0">
               Skills
             </h3>
 
@@ -125,13 +125,13 @@ export default function Home() {
 
         {/* Portfolio section */}
         <section
-          className="w-[85%] mx-auto my-11 sm:w-full sm:my-20 xl:max-w-[1200px]"
+          className="w-[85%] mx-auto my-11 sm:w-full sm:my-20 lg:max-w-[1200px]"
           id="portfolio"
         >
           <H2>Portfolio</H2>
 
-          <div className="mt-5 xl:flex xl:mt-9">
-            <section className="[&>*]:border-t-[0.5px] [&>*:last-child]:border-b-[0.5px] [&>*]:border-textColor sm:[&>*]:border-t-[0.75px] sm:[&>*:last-child]:border-b-[0.75px] xl:w-1/2 xl:max-w-[550px]">
+          <div className="mt-5 lg:flex lg:mt-9">
+            <section className="[&>*]:border-t-[0.5px] [&>*:last-child]:border-b-[0.5px] [&>*]:border-textColor sm:[&>*]:border-t-[0.75px] sm:[&>*:last-child]:border-b-[0.75px] lg:w-5/12 lg:max-w-[550px] xl:w-1/2">
               {projects.map((project) => (
                 <Project
                   key={project.name}
@@ -144,7 +144,7 @@ export default function Home() {
               ))}
             </section>
 
-            <div className="relative flex-grow xl:block -z-10">
+            <div className="relative flex-grow lg:block -z-10">
               <Image
                 className="absolute inset-0 h-full w-full object-cover object-center"
                 src={activeProjectImage}

@@ -29,7 +29,7 @@ const Header: React.FC = () => {
   return (
     <header
       ref={headerRef}
-      className="w-full bg-background fixed top-0 border-b-[0.5px] border-b-textColor py-[14px] sm:border-b-[0.75px] xl:py-4"
+      className="w-full bg-background fixed top-0 border-b-[0.5px] border-b-textColor py-[14px] sm:border-b-[0.75px] lg:py-4"
     >
       <div className="flex justify-between items-center w-[85%] mx-auto max-w-[1200px]">
         <Image
@@ -40,7 +40,7 @@ const Header: React.FC = () => {
           height={500}
         />
 
-        <nav className="flex gap-4 sm:gap-6 xl:gap-8">
+        <nav className="flex gap-4 sm:gap-6 lg:gap-8">
           {navItems.map((item, index) => {
             if (navItems.length !== index + 1) {
               return (

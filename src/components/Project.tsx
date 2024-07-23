@@ -41,7 +41,7 @@ const Project: React.FC<ProjectProps> = ({
       id={projectId}
       onClick={onClick}
       onKeyDown={onKeyDown}
-      className={`project py-3 sm:py-[18px] sm:[&_p]:w-[80%] ${
+      className={`project py-3 sm:py-[18px] sm:[&_p]:w-[80%] lg:[&_p]:w-full xl:[&_p]:w-[80%] ${
         projectId !== openProject
           ? "cursor-pointer hover:bg-[rgba(61,_71,_81,_0.4)] focus:bg-[rgba(61,_71,_81,_0.4)]"
           : "project-open"
@@ -56,7 +56,7 @@ const Project: React.FC<ProjectProps> = ({
       }
     >
       <div
-        className={`px-2.5 ${ifStatement && "mb-5 sm:mb-7 xl:mb-0"} sm:px-6`}
+        className={`px-2.5 ${ifStatement && "mb-5 sm:mb-7 lg:mb-0"} sm:px-6`}
       >
         <h4
           className={`text-lg flex justify-between ${
@@ -85,7 +85,7 @@ const Project: React.FC<ProjectProps> = ({
       </div>
 
       {image && (
-        <div className="mb-1.5 sm:px-6 xl:hidden">
+        <div className="mb-1.5 sm:px-6 lg:hidden">
           <Image
             className="rounded"
             src={image}
