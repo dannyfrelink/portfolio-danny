@@ -81,7 +81,7 @@ export default function Home() {
                     className="cursor-pointer block w-fit mt-3 sm:mt-5 hover:bg-[rgba(42,_52,_61,_0.4)] focus:bg-[rgba(42,_52,_61,_0.4)]"
                     to="portfolio"
                     smooth={true}
-                    offset={-100}
+                    offset={-105}
                     duration={500}
                     tabIndex={0}
                   >
